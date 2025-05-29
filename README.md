@@ -8,12 +8,12 @@ db.books.insertMany([
     { title: "Master IAM", author: "Jane Smith", due_date: new Date("2025-05-05"), is_read: true }
 ])
 ```
-![1](/Assignment1/images/1.png)
+![1](images/1.png)
 ### 2 View All Books
 ```
 db.books.find().pretty()
 ```
-![Screenshot](/Assignment1/images/2.png)
+![Screenshot](images/2.png)
 ### 3 Change is_read Data Type from String to Boolean
 ```
 db.books.updateMany(
@@ -21,7 +21,7 @@ db.books.updateMany(
     { $set: { is_read: true } }
 )
 ```
-![Screenshot](/Assignment1/images/3.png)
+![Screenshot](images/3.png)
 ### 4 Insert More Books
 ```
 db.books.insertMany([
@@ -29,7 +29,7 @@ db.books.insertMany([
     { title: "CloudWatch Deep Dive", author: "Bruce Wayne", due_date: new Date("2025-06-10"), is_read: false }
 ])
 ```
-![Screenshot](/Assignment1/images/4.png)
+![Screenshot](images/4.png)
 ### 5 Set Default is_read to false (When inserting new docs)
 ```
 db.books.insertOne({
@@ -43,7 +43,7 @@ db.books.updateOne(
     { $set: { is_read: false } }
 )
 ```
-![Screenshot](/Assignment1/images/5.png)
+![Screenshot](images/5.png)
 ### 6 Change is_read Status Using ObjectId
 ```
 db.books.updateOne(
@@ -51,13 +51,13 @@ db.books.updateOne(
   { $set: { is_read: true } }
 )
 ```
-![Screenshot](/Assignment1/images/6.png)
+![Screenshot](images/6.png)
 ### 7 Add priority Field Using Enum (Low, Medium, High)
 b.books.updateMany(
   {},
   { $set: { priority: "Medium" } }
 )
-![Screenshot](/Assignment1/images/7.png)
+![Screenshot](images/7.png)
 ### 8 Insert a Book with Priority
 db.books.insertOne({
   title: "Set up CloudFront",
@@ -66,12 +66,12 @@ db.books.insertOne({
   is_read: false,
   priority: "Low"
 })
-![Screenshot](/Assignment1/images/8.png)
+![Screenshot](images/8.png)
 ### 9 Sort Books by Due Date
 ```
 db.books.find().sort({ due_date: 1 })
 ```
-![Screenshot](/Assignment1/images/9.png)
+![Screenshot](images/9.png)
 ### 10 Find Pending Books for Specific Date
 ```
 db.books.find({
@@ -79,9 +79,9 @@ db.books.find({
   is_read: false
 })
 ```
-![Screenshot](/Assignment1/images/10.png)
+![Screenshot](images/10.png)
 ### 11 Count Total Books
 ```
 db.books.countDocuments()
 ```
-![Screenshot](/Assignment1/images/11.png)
+![Screenshot](images/11.png)
